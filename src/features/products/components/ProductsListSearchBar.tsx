@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button";
 import { twMerge } from "tailwind-merge";
 
 export const ProductsListSearchBar = () => {
-  const { query, setQuery, toggleShowCategoriesFilter, showCategoriesFilter } = useProductListFilter();
+  const { query, setQuery, toggleShowCategoriesFilter, showCategoriesFilter, setCategoryFilter } = useProductListFilter();
+  const clear = () => {
+    setQuery("");
+    setCategoryFilter("");
+  };
   return (
     <div className="flex items-center justify-between text-sm">
       <div className="bg-card flex basis-sm items-center gap-2 rounded-full border p-3 shadow">
@@ -14,7 +18,7 @@ export const ProductsListSearchBar = () => {
         <input className="w-full outline-none" placeholder="Search product" type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
       </div>
       <div className="flex items-center gap-2">
-        <Button variant={"card"} onClick={() => setQuery("")} size={"icon"} className="relative">
+        <Button variant={"card"} onClick={clear} size={"icon"} className="relative">
           <X className="size-5" />
           <span className="sr-only">Clear search</span>
         </Button>

@@ -28,7 +28,7 @@ export const CategoriesList = () => {
   ) : (
     <div className={twMerge("mt-4 flex flex-wrap items-center gap-1 text-xs font-medium", showCategoriesFilter ? "" : "hidden")}>
       {categories.map((category) => (
-        <div onClick={() => setCategoryFilter(category.name)} key={category.id} className={twMerge("bg-card cursor-pointer rounded border-2 px-2 py-1", categoryFilter == category.name ? "border-primary" : "")}>
+        <div onClick={() => setCategoryFilter(categoryFilter == category.id ? "" : category.id)} key={category.id} className={twMerge("bg-card cursor-pointer rounded border-2 px-2 py-1", categoryFilter == category.id ? "border-primary" : "")}>
           {category.name}
         </div>
       ))}

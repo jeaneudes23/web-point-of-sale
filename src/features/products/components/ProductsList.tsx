@@ -10,7 +10,7 @@ export const ProductsList = () => {
     return await getProducts();
   };
 
-  const { query } = useProductListFilter();
+  const { query, categoryFilter } = useProductListFilter();
 
   const {
     data: products,
@@ -28,7 +28,11 @@ export const ProductsList = () => {
   ) : (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-6">
       {products
-        .filter((product) => product.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+        .filter((product) => {
+          const matchesQuery = !query || product.name.toLocaleLowerCase().includes(query.toLocaleLowerCase());
+          const matchesCategory = !categoryFilter || product.categoryIds.includes(categoryFilter);
+          return matchesCategory && matchesQuery;
+        })
         .map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
