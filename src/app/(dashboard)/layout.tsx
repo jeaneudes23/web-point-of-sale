@@ -42,7 +42,6 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
         </div>
         <div className="mt-auto grid shrink-0 gap-1 py-4">
           <SidebarLink href="/profile" label="profile" icon={<User />} />
-
           <Button variant={"card"} className="justify-start border-none">
             <LogOut className="text-primary" />
             Logout

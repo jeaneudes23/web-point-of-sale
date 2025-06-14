@@ -16,8 +16,8 @@ export default function SidebarLink({ href, label, icon }: Props) {
   const path = usePathname();
   const active = path.startsWith(href);
   return (
-    <Link href={href} className={buttonVariants({ className: "justify-start border-0 capitalize", variant: active ? "default" : "card" })}>
-      <span className={twMerge(active ? "" : "text-primary", "shrink-0")}>{icon}</span>
+    <Link href={href} className={buttonVariants({ className: twMerge("justify-start border-0 capitalize", active ? "" : "[&_svg]:text-primary", "[&_svg]:shrink-0"), variant: active ? "default" : "card" })}>
+      {icon}
       {label}
     </Link>
   );
