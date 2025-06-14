@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { AppProviders } from "./providers/AppProviders";
-import { Poppins as FontSans } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,4 +27,3 @@ export default function RootLayout({
     </AppProviders>
   );
 }
-

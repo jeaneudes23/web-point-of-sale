@@ -37,7 +37,13 @@ export const CategoriesList = () => {
 };
 
 const LoadingSkeleton = () => {
-  return <div>Loading</div>;
+  return (
+    <div className="mt-4 flex flex-wrap items-center gap-1 text-xs font-medium">
+      {Array.from({ length: 12 }, (_, index) => (
+        <div key={index} className="bg-card h-7 basis-24 animate-pulse rounded border"></div>
+      ))}
+    </div>
+  );
 };
 
 const ErrorMessage = () => {

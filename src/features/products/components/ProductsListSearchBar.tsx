@@ -12,20 +12,19 @@ export const ProductsListSearchBar = () => {
     setCategoryFilter("");
   };
   return (
-    <div className="flex items-center justify-between text-sm">
-      <div className="bg-card flex basis-sm items-center gap-2 rounded-full border p-3 shadow">
+    <div className="flex justify-between gap-2 text-sm">
+      <Button variant={"card"} className="h-auto" onClick={toggleShowCategoriesFilter}>
+        <ChevronDown className={twMerge(showCategoriesFilter ? "" : "rotate-180", "relative transition-all duration-300")} />
+        <span className="sr-only">Hide/Show categories</span>
+      </Button>
+      <div className="bg-card flex grow items-center gap-2 rounded-lg border p-3">
         <Search className="size-5" />
         <input className="w-full outline-none" placeholder="Search product" type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
       </div>
-      <div className="flex items-center gap-2">
-        <Button variant={"card"} onClick={clear} size={"icon"} className="relative">
-          <X className="size-5" />
-          <span className="sr-only">Clear search</span>
-        </Button>
-        <Button variant={"product"} onClick={toggleShowCategoriesFilter}>
-          <ChevronDown className={twMerge(showCategoriesFilter ? "" : "rotate-180", "transition-all duration-300")} />
-        </Button>
-      </div>
+      <Button variant={"card"} onClick={clear} className="relative h-auto">
+        <X />
+        <span className="sr-only">Clear search</span>
+      </Button>
     </div>
   );
 };

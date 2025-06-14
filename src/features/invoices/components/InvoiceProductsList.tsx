@@ -6,18 +6,15 @@ import { formatMoney } from "@/lib/utils";
 import useProductListFilter from "@/features/products/hooks/useProductListFilter";
 import { twMerge } from "tailwind-merge";
 import { Button } from "@/components/ui/button";
-import { Trash } from "lucide-react";
+import { Info, Trash } from "lucide-react";
 
 export const InvoiceProductsList = () => {
   const { invoiceProducts, removeInvoiceProduct } = useInvoiceStore();
-  const { setQuery, query } = useProductListFilter();
+  const { setQuery, query, setCategoryFilter } = useProductListFilter();
 
   const showSingleItem = (name: string) => {
-    if (name == query) {
-      setQuery("");
-    } else {
-      setQuery(name);
-    }
+    setQuery(name == query ? "" : name);
+    setCategoryFilter("");
   };
 
   return (
@@ -49,7 +46,12 @@ export const InvoiceProductsList = () => {
           </div>
         ))}
       </div>
-      {!!!invoiceProducts.length && <div className="bg-background grid h-full place-content-center rounded-2xl border shadow">No items Added</div>}
+      {!!!invoiceProducts.length && (
+        <div className="bg-background flex h-full flex-col items-center justify-center rounded-xl">
+          <Info />
+          <p className="font-medium">No items added</p>
+        </div>
+      )}
     </>
   );
 };
