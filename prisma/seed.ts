@@ -54,7 +54,23 @@ const products: Prisma.ProductCreateInput[] = [
   }
 ]
 
+const categories: Prisma.CategoryCreateInput[] = [
+  { name: "Fast Food" },
+  { name: "Italian" },
+  { name: "Japanese" },
+  { name: "Healthy" },
+  { name: "Dessert" },
+  { name: "American" },
+  { name: "Mexican" },
+  { name: "Vegetarian" },
+  { name: "Seafood" },
+  { name: "Breakfast" }
+]
+
 export async function main() {
+  await prisma.category.createMany({
+    data: categories
+  })
   await prisma.product.createMany({
     data: products
   })

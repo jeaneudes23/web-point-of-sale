@@ -6,6 +6,7 @@ interface InvoiceStore {
   addInvoiceProduct: (invoiceProduct: InvoiceProduct) => void
   updateInvoiceProductQuantity: (productId: string, newQuantity: number) => void,
   removeInvoiceProduct: (productId: string) => void,
+  clearInvoice: () => void
 }
 
 const useInvoiceStore = create<InvoiceStore>((set) => ({
@@ -29,6 +30,9 @@ const useInvoiceStore = create<InvoiceStore>((set) => ({
   }),
   removeInvoiceProduct: (productId) => set((state) => ({
     invoiceProducts: state.invoiceProducts.filter(invoiceProduct => invoiceProduct.id !== productId)
+  })),
+  clearInvoice: () => set(() => ({
+    invoiceProducts: []
   }))
 }))
 

@@ -18,7 +18,7 @@ export const InvoicePriceBreakdown = () => {
         <h3>Sub Total</h3>
         <p>{formatMoney(subTotal)}</p>
       </div>
-      <div className="text-sm font-medium flex justify-between text-muted-foreground">
+      <div className="text-sm font-medium flex justify-between text-muted-foreground mt-1 mb-4">
         <h3>Tax 5%</h3>
         <p>{formatMoney(taxAmount)}</p>
       </div>

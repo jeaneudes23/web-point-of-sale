@@ -14,6 +14,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Category {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+}
+
 model Product {
   id String @id @map("_id") @default(auto()) @db.ObjectId
   name String @unique
