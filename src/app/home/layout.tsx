@@ -12,11 +12,11 @@ export default function HomeLayout({ children }: PropsWithChildren) {
         <div className="flex-grow overflow-y-auto"></div>
         <div className="mt-auto shrink-0">Bottom</div>
       </aside>
-      <div className="grow basis-full bg-background flex flex-col px-8">
-        <div className="shrink-0 my-6">
+      <div className="grow basis-full bg-background flex flex-col">
+        <div className="shrink-0 my-6 px-8">
           <ProductsListSearchBar />
         </div>
-        <div className="grow overflow-y-auto">{children}</div>
+        <div className="grow overflow-y-auto px-8">{children}</div>
       </div>
       <aside className="basis-1/3 bg-card flex flex-col px-4">
         <div className="shrink-0 h-20 flex items-center">

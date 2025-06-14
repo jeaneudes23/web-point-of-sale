@@ -5,6 +5,7 @@ import { AppProviders } from "./providers/AppProviders";
 import { Poppins as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
+  subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-sans",
 });
@@ -21,9 +22,7 @@ export default function RootLayout({
   return (
     <AppProviders>
       <html lang="en">
-        <body className={`${fontSans.variable} font-sans antialiased`}>
-          {children}
-        </body>
+        <body className={`${fontSans.variable} font-sans antialiased`}>{children}</body>
       </html>
     </AppProviders>
   );
