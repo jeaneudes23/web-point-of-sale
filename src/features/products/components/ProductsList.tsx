@@ -30,7 +30,7 @@ export const ProductsList = () => {
   ) : !isSuccess || !!!products?.length ? (
     <ErrorMessage />
   ) : (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-6">
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

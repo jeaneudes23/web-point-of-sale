@@ -15,7 +15,7 @@ export default function page() {
           <ProductsListSearchBar />
           <CategoriesList />
         </div>
-        <div className="mb-16 grow overflow-y-auto px-4">
+        <div className="grow overflow-y-auto px-4 pb-16">
           <ProductsList />
         </div>
       </div>
