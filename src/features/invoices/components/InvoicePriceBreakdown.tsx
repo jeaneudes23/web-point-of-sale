@@ -13,16 +13,16 @@ export const InvoicePriceBreakdown = () => {
   const taxAmount = (subTotal * 5) / 100;
 
   return (
-    <div className="bg-background p-6 rounded-xl shadow-md">
-      <div className="text-sm font-medium flex justify-between text-muted-foreground">
+    <div className="bg-background rounded-xl p-6 shadow-md">
+      <div className="text-muted-foreground flex justify-between text-sm font-medium">
         <h3>Sub Total</h3>
         <p>{formatMoney(subTotal)}</p>
       </div>
-      <div className="text-sm font-medium flex justify-between text-muted-foreground">
+      <div className="text-muted-foreground mt-1 mb-4 flex justify-between text-sm font-medium">
         <h3>Tax 5%</h3>
         <p>{formatMoney(taxAmount)}</p>
       </div>
-      <div className="font-semibold flex justify-between">
+      <div className="flex justify-between font-semibold">
         <h3>Total Amount</h3>
         <p>{formatMoney(subTotal + taxAmount)}</p>
       </div>

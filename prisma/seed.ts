@@ -1,6 +1,19 @@
 import prisma from "@/lib/prisma"
 import { Prisma } from "@prisma/client"
 
+const categories: Prisma.CategoryCreateInput[] = [
+  { name: "Fast Food" },
+  { name: "Italian" },
+  { name: "Japanese" },
+  { name: "Healthy" },
+  { name: "Dessert" },
+  { name: "American" },
+  { name: "Mexican" },
+  { name: "Vegetarian" },
+  { name: "Seafood" },
+  { name: "Breakfast" }
+]
+
 const products: Prisma.ProductCreateInput[] = [
   {
     name: "Burger",
@@ -55,10 +68,30 @@ const products: Prisma.ProductCreateInput[] = [
 ]
 
 export async function main() {
-  await prisma.product.createMany({
-    data: products
+  await prisma.category.createMany({
+    data: categories
   })
 
+  const newCategories = await prisma.category.findMany({
+    select: {
+      id: true
+    }
+  })
+
+  const ids = newCategories.flatMap(categories => categories.id)
+
+  products.forEach(async (product) => {
+
+    const positions = Array.from({ length: (Math.random() * 3) + 1 }, () => Math.floor(Math.random() * ids.length))
+    const selects = positions.map(pos => ids[pos])
+
+    await prisma.product.create({
+      data: {
+        ...product,
+        categoryIds: selects
+      }
+    })
+  })
 }
 
 main()

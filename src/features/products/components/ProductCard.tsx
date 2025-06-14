@@ -5,18 +5,13 @@ import { InvoiceProductControls } from "@/features/invoices/components/InvoicePr
 
 export const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className="bg-card rounded-2xl shadow p-4">
-      <div className="relative aspect-square rounded-[inherit] bg-background grid place-content-center">
-        <Image
-          fill
-          src={product.image!}
-          alt={product.name}
-          className="rounded-[inherit] object-cover"
-        />
+    <div className="bg-card rounded-2xl p-4 shadow">
+      <div className="bg-background relative grid aspect-square place-content-center rounded-[inherit]">
+        <Image fill src={product.image!} alt={product.name} className="rounded-[inherit] object-cover" />
       </div>
-      <h3 className="text-sm font-medium mt-4 mb-1">{product.name}</h3>
+      <h3 className="mt-4 mb-1 text-sm font-medium">{product.name}</h3>
       <p className="text-sm font-bold">{formatMoney(product.price)}</p>
-      <div className="grid mt-4">
+      <div className="mt-4 grid">
         <InvoiceProductControls product={product} />
       </div>
     </div>
