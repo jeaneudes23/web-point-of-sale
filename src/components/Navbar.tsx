@@ -2,14 +2,14 @@ import { Computer } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { buttonVariants } from "./ui/button";
+import { AppLogo } from "./AppLogo";
 
 export const Navbar = () => {
   return (
     <nav>
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <Link href={"/"} className="flex shrink-0 items-center gap-2 py-4">
-          <Computer className="text-primary size-6" />
-          <span className="font-bold">SMPOS</span>
+        <Link href={"/"}>
+          <AppLogo />
         </Link>
         <div className="flex basis-md items-center justify-between gap-4">
           <Link className={buttonVariants({ variant: "link" })} href={"/features"}>

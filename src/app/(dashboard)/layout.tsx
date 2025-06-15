@@ -1,15 +1,18 @@
+import { AppLogo } from "@/components/AppLogo";
 import SidebarLink from "@/components/SidebarLink";
 import { Button } from "@/components/ui/button";
 import { BookmarkMinus, Box, Computer, Layers, LayoutDashboard, LayoutList, LogOut, Settings, ShoppingCart, Store, TrendingUp, User, Users } from "lucide-react";
+import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
   return (
     <div className="flex h-dvh">
       <aside className="bg-card flex w-56 shrink-0 flex-col px-4 shadow-lg">
-        <div className="mb-4 flex shrink-0 items-center gap-2 py-4">
-          <Computer className="text-primary size-6" />
-          <span className="font-bold">WEBPOS</span>
+        <div className="mb-4 py-4">
+          <Link href={"/dashboard"}>
+            <AppLogo />
+          </Link>
         </div>
         <div className="flex-grow space-y-4 overflow-y-auto">
           <div className="grid gap-1">

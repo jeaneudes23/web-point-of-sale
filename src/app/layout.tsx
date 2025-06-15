@@ -10,7 +10,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 export const metadata: Metadata = {
-  title: "WEB POS",
+  title: "SMART POS",
   description: "a web point of sale by jeaneudes23",
 };
 
