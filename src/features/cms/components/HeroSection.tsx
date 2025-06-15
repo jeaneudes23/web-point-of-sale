@@ -23,7 +23,7 @@ export const HeroSection = () => {
         </div>
       </div>
       <div className="mx-auto">
-        <Image width={0} height={0} src={"/dashboard.png"} alt="hero" className="h-auto w-full rounded-xl shadow-2xl" />
+        <Image width={0} height={0} src={"/dashboard.png"} alt="hero" className="h-auto w-full rounded-xl border shadow-xl" />
       </div>
     </section>
   );

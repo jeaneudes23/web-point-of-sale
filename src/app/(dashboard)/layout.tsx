@@ -7,7 +7,7 @@ import React, { PropsWithChildren } from "react";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
   return (
-    <div className="flex h-dvh">
+    <div className="bg-background text-foreground flex h-dvh">
       <aside className="bg-card flex w-56 shrink-0 flex-col px-4 shadow-lg">
         <div className="mb-4 py-4">
           <Link href={"/dashboard"}>
