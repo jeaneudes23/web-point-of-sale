@@ -7,7 +7,7 @@ import { RotateCcw } from "lucide-react";
 export const ClearInvoiceList = () => {
   const { clearInvoice } = useInvoiceStore();
   return (
-    <Button variant={"destructive"} onClick={clearInvoice}>
+    <Button variant={"common"} onClick={clearInvoice}>
       <RotateCcw />
       <span className="sr-only">Clear Invoice</span>
     </Button>

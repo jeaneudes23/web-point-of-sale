@@ -25,7 +25,7 @@ export const InvoiceProductControls = ({ product }: { product: Product }) => {
       </Button>
     </div>
   ) : (
-    <Button className="rounded-full" onClick={() => addInvoiceProduct({ ...product, quantity: 1 })}>
+    <Button variant={"common"} className="rounded-full" onClick={() => addInvoiceProduct({ ...product, quantity: 1 })}>
       Add
       <PlusCircle />
     </Button>
