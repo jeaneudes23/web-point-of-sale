@@ -1,6 +1,6 @@
 import SidebarLink from "@/components/SidebarLink";
 import { Button } from "@/components/ui/button";
-import { Box, Computer, Layers, LayoutDashboard, LayoutList, LogOut, ShoppingCart, Store, Tag, User, Users } from "lucide-react";
+import { BookmarkMinus, Box, Computer, Layers, LayoutDashboard, LayoutList, LogOut, Settings, ShoppingCart, Store, TrendingUp, User, Users } from "lucide-react";
 import React, { PropsWithChildren } from "react";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
@@ -27,8 +27,9 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
             <div className="space-y-2">
               <p className="text-muted-foreground text-sm font-medium">Transactions</p>
               <div className="grid gap-1">
-                <SidebarLink href="/sales" label="sales" icon={<Tag />} />
                 <SidebarLink href="/invoices" label="invoices" icon={<LayoutList />} />
+                <SidebarLink href="/sales" label="sales" icon={<TrendingUp />} />
+                <SidebarLink href="/expenses" label="expenses" icon={<BookmarkMinus />} />
               </div>
             </div>
             <div className="space-y-2">
@@ -36,6 +37,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
               <div className="grid gap-1">
                 <SidebarLink href="/facility" label="facility" icon={<Store />} />
                 <SidebarLink href="/staff" label="staff" icon={<Users />} />
+                <SidebarLink href="/settings" label="settings" icon={<Settings />} />
               </div>
             </div>
           </div>
