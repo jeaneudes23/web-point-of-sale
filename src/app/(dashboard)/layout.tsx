@@ -1,15 +1,18 @@
+import { AppLogo } from "@/components/AppLogo";
 import SidebarLink from "@/components/SidebarLink";
 import { Button } from "@/components/ui/button";
-import { Box, Computer, Layers, LayoutDashboard, LayoutList, LogOut, ShoppingCart, Store, Tag, User, Users } from "lucide-react";
+import { BookmarkMinus, Box, Layers, LayoutDashboard, LayoutList, LogOut, Settings, ShoppingCart, Store, TrendingUp, User, Users } from "lucide-react";
+import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
   return (
     <div className="flex h-dvh">
       <aside className="bg-card flex w-56 shrink-0 flex-col px-4 shadow-lg">
-        <div className="mb-4 flex shrink-0 items-center gap-2 py-4">
-          <Computer className="text-primary size-6" />
-          <span className="font-bold">WEBPOS</span>
+        <div className="mb-4 py-4">
+          <Link href={"/dashboard"}>
+            <AppLogo />
+          </Link>
         </div>
         <div className="flex-grow space-y-4 overflow-y-auto">
           <div className="grid gap-1">
@@ -27,8 +30,9 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
             <div className="space-y-2">
               <p className="text-muted-foreground text-sm font-medium">Transactions</p>
               <div className="grid gap-1">
-                <SidebarLink href="/sales" label="sales" icon={<Tag />} />
                 <SidebarLink href="/invoices" label="invoices" icon={<LayoutList />} />
+                <SidebarLink href="/sales" label="sales" icon={<TrendingUp />} />
+                <SidebarLink href="/expenses" label="expenses" icon={<BookmarkMinus />} />
               </div>
             </div>
             <div className="space-y-2">
@@ -36,6 +40,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
               <div className="grid gap-1">
                 <SidebarLink href="/facility" label="facility" icon={<Store />} />
                 <SidebarLink href="/staff" label="staff" icon={<Users />} />
+                <SidebarLink href="/settings" label="settings" icon={<Settings />} />
               </div>
             </div>
           </div>

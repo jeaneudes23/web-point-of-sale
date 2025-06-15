@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { AppProviders } from "./providers/AppProviders";
-import { Inter as FontSans } from "next/font/google";
+import { IBM_Plex_Sans as FontSans } from "next/font/google";
 
 const fontSans = FontSans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   variable: "--font-sans",
 });
 export const metadata: Metadata = {
-  title: "WEB POS",
+  title: "SMART POS",
   description: "a web point of sale by jeaneudes23",
 };
 
