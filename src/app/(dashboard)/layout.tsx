@@ -1,7 +1,7 @@
 import { AppLogo } from "@/components/AppLogo";
 import SidebarLink from "@/components/SidebarLink";
 import { Button } from "@/components/ui/button";
-import { BookmarkMinus, Box, Computer, Layers, LayoutDashboard, LayoutList, LogOut, Settings, ShoppingCart, Store, TrendingUp, User, Users } from "lucide-react";
+import { BookmarkMinus, Box, Layers, LayoutDashboard, LayoutList, LogOut, Settings, ShoppingCart, Store, TrendingUp, User, Users } from "lucide-react";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
