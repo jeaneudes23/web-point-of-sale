@@ -24,7 +24,10 @@ export const Navbar = () => {
             About us
           </Link>
         </div>
-        <div>
+        <div className="flex items-center gap-2">
+          <Link href={"/login"} className={buttonVariants({ variant: "card" })}>
+            Login
+          </Link>
           <Link href={"/signup"} className={buttonVariants({})}>
             Signup
           </Link>

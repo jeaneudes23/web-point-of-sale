@@ -14,11 +14,8 @@ export const HeroSection = () => {
         <h1 className="mt-4 text-6xl font-bold text-balance">Smart Point of Sale. Simple, Fast, Reliable.</h1>
         <p className="text-muted-foreground mt-4 mb-10 text-xl">Everything you need to run your business efficiently.</p>
         <div className="flex items-center justify-center gap-4">
-          <Link href={"/signup"} className={buttonVariants({ size: "lg" })}>
-            Signup
-          </Link>
-          <Link href={"/signup"} className={buttonVariants({ variant: "card", size: "lg" })}>
-            Login
+          <Link href={"/checkout"} className={buttonVariants({ size: "lg", className: "h-auto px-8 py-4 !text-base" })}>
+            Get Started For Free
           </Link>
         </div>
       </div>
